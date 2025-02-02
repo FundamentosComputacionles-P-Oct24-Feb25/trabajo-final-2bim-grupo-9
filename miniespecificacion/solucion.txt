@@ -1,0 +1,305 @@
+Inicio
+
+  funcion principal
+    opcion,i[0-n]
+    contador, i[0-n]
+    totalParticipantes,i[0-n]<--0
+    continuar,x(20),[{a-z},{A-Z},{0-9},{Bs}]
+    cadenaInformacio,x(20),[{a-z},{A-Z},{0-9},{Bs}]
+    cadenaReporte,x(20),[{a-z},{A-Z},{0-9},{Bs}]
+    actividades(7)<--{"Fútbol","Natación","Atletismo","Básquetbol",
+                      "Ciclismo","Tenis", "Yoga"}
+    paricipantesRegistrados(7),i[0-n]
+
+
+    haga
+      escribir "Menú:\n"
+      para (contador<--0, contador<7, 1) haga
+        escribir contador+1+"."+actividades[contador]
+      fin para
+      escribir "Ingrese la actividad en la que desea registrar un nuevo participante"
+      leer opcion
+
+      si (opcion == 1) entonces
+        registrarParticipanteFutbol()
+        paricipantesRegistrados[0]<--paricipantesRegistrados[0]+1
+      caso contrario
+        si (opcion == 2) entonces
+          registrarParticipanteNatacion()
+          paricipantesRegistrados[1]<--paricipantesRegistrados[1]+1
+        caso contrario
+          si (opcion == 3) entonces
+            registrarParticipanteAtletismo()
+            paricipantesRegistrados[2]<--paricipantesRegistrados[2]+1
+          caso contrario
+            si (opcion == 4) entonces
+              registrarParticipanteBasquetbol()
+              paricipantesRegistrados[3]<--paricipantesRegistrados[3]+1
+            caso contrario
+              si (opcion == 5) entonces
+                registrarParticipanteCiclismo()
+                paricipantesRegistrados[4]<--paricipantesRegistrados[4]+1
+              caso contrario
+                si (opcion == 6) entonces
+                  registrarParticipanteTenis()
+                  paricipantesRegistrados[5]<--paricipantesRegistrados[5]+1
+                caso contrario
+                  si (opcion == 7) entonces
+                    registrarParticipanteYoga()
+                    paricipantesRegistrados[6]<--paricipantesRegistrados[6]+1
+                  caso contrario
+                    escribir "lo sentimos, el club no tiene esa opción."
+                  Fin si
+                Fin si
+              Fin si
+            Fin si
+          Fin si
+        Fin si
+      Fin si
+
+      escribir "¿Desea registrar otro participante? (S/N):"
+      leer continuar
+
+    fin haga (continuar == "S" O continuar == "s") entonces
+
+    para (contador<--0, contador<7, 1) haga
+      totalParticipantes<--totalParticipantes+paricipantesRegistrados[contador]
+    fin para
+    cadenaInformacio<--ObtenerInformacion(totalParticipantes)
+    escribir cadenaInformacio
+    cadenaReporte<--obtenerReporte(actividades,paricipantesRegistrados);
+
+  fin funcion principal
+
+  función registrarParticipanteFutbol()
+    nombre, x(50), [{a-z}, {A-Z}, {Bs}]
+    edad, i[0-n]
+    posicion, x(20), [{a-z}, {A-Z}, {Bs}]
+    ciudad, x(30), [{a-z}, {A-Z}, {Bs}]
+    equipoFavorito, x(30), [{a-z}, {A-Z}, {Bs}]
+    cadena,x(20),[{a-z},{A-Z},{0-9},{Bs},{\}]
+
+    Escribir "Ingrese el nombre del participante:"
+    Leer nombre
+    Escribir "Ingrese la edad del participante:"
+    Leer edad
+    Escribir "Ingrese la posición preferida:"
+    Leer posicion
+    Escribir "Ingrese la ciudad:"
+    Leer ciudad
+    Escribir "Ingrese el equipo favorito:"
+    Leer equipoFavorito
+
+    cadena <-- "Resumen de registro - Fútbol:\n" +
+               "Nombre: " + nombre + "\n" +
+               "Edad: " + edad + "\n" +
+               "Posición preferida: " + posicion + "\n" +
+               "Ciudad: " + ciudad + "\n" +
+               "Equipo favorito: " + equipoFavorito + "\n"
+
+    Escribir cadena
+  Fin función registrarParticipanteFutbol
+
+  función registrarParticipanteNatacion()
+    nombre, x(50), [{a-z}, {A-Z}, {Bs}]
+    edad, i[0-n]
+    nivel, x(20), [{a-z}, {A-Z}, {Bs}]
+    ciudad, x(30), [{a-z}, {A-Z}, {Bs}]
+    estiloFavorito, x(30), [{a-z}, {A-Z}, {Bs}]
+    cadena,x(20),[{a-z},{A-Z},{0-9},{Bs},{\}]
+
+    Escribir "Ingrese el nombre del participante:"
+    Leer nombre
+    Escribir "Ingrese la edad del participante:"
+    Leer edad
+    Escribir "Ingrese el nivel (principiante, intermedio, avanzado):"
+    Leer nivel
+    Escribir "Ingrese la ciudad:"
+    Leer ciudad
+    Escribir "Ingrese el estilo favorito:"
+    Leer estiloFavorito
+
+    cadena <-- "Resumen de registro - Natación:\n" +
+               "Nombre: " + nombre + "\n" +
+               "Edad: " + edad + "\n" +
+               "Nivel: " + nivel + "\n" +
+               "Ciudad: " + ciudad + "\n" +
+               "Estilo favorito: " + estiloFavorito + "\n"
+
+    Escribir cadena
+  Fin función registrarParticipanteNatacion
+
+  función registrarParticipanteAtletismo()
+    nombre, x(50), [{a-z}, {A-Z}, {Bs}]
+    edad, i[0-n]
+    especialidad, x(20), [{a-z}, {A-Z}, {Bs}]
+    ciudad, x(30), [{a-z}, {A-Z}, {Bs}]
+    recordPersonal, x(30), [{a-z}, {A-Z}, {Bs}]
+    cadena,x(20),[{a-z},{A-Z},{0-9},{Bs},{\}]
+
+    Escribir "Ingrese el nombre del participante:"
+    Leer nombre
+    Escribir "Ingrese la edad del participante:"
+    Leer edad
+    Escribir "Ingrese la especialidad (carreras, salto, lanzamiento):"
+    Leer especialidad
+    Escribir "Ingrese la ciudad:"
+    Leer ciudad
+    Escribir "Ingrese el récord personal:"
+    Leer recordPersonal
+
+    cadena <-- "Resumen de registro - Atletismo:\n" +
+               "Nombre: " + nombre + "\n" +
+               "Edad: " + edad + "\n" +
+               "Especialidad: " + especialidad + "\n" +
+               "Ciudad: " + ciudad + "\n" +
+               "Récord personal: " + recordPersonal + "\n"
+
+    Escribir cadena
+  Fin función registrarParticipanteAtletismo
+
+  función registrarParticipanteBasquetbol()
+    nombre, x(50), [{a-z}, {A-Z}, {Bs}]
+    edad, i[0-n]
+    posicion, x(20), [{a-z}, {A-Z}, {Bs}]
+    estatura, x(10), [{0-9}, {.}]
+    ciudad, x(30), [{a-z}, {A-Z}, {Bs}]
+    cadena,x(20),[{a-z},{A-Z},{0-9},{Bs},{\}]
+
+    Escribir "Ingrese el nombre del participante:"
+    Leer nombre
+    Escribir "Ingrese la edad del participante:"
+    Leer edad
+    Escribir "Ingrese la posición preferida:"
+    Leer posicion
+    Escribir "Ingrese la estatura:"
+    Leer estatura
+    Escribir "Ingrese la ciudad:"
+    Leer ciudad
+
+    cadena <-- "Resumen de registro - Básquetbol:\n" +
+               "Nombre: " + nombre + "\n" +
+               "Edad: " + edad + "\n" +
+               "Posición preferida: " + posicion + "\n" +
+               "Estatura: " + estatura + "\n" +
+               "Ciudad: " + ciudad + "\n"
+
+    Escribir cadena
+  Fin función registrarParticipanteBasquetbol
+
+  función registrarParticipanteCiclismo()
+    nombre, x(50), [{a-z}, {A-Z}, {Bs}]
+    edad, i[0-n]
+    tipoCiclismo, x(20), [{a-z}, {A-Z}, {Bs}]
+    ciudad, x(30), [{a-z}, {A-Z}, {Bs}]
+    marcaBicicleta, x(30), [{a-z}, {A-Z}, {Bs}]
+    cadena,x(20),[{a-z},{A-Z},{0-9},{Bs},{\}]
+
+    Escribir "Ingrese el nombre del participante:"
+    Leer nombre
+    Escribir "Ingrese la edad del participante:"
+    Leer edad
+    Escribir "Ingrese el tipo de ciclismo (montaña, ruta, urbano):"
+    Leer tipoCiclismo
+    Escribir "Ingrese la ciudad:"
+    Leer ciudad
+    Escribir "Ingrese la marca de bicicleta preferida:"
+    Leer marcaBicicleta
+
+    cadena <-- "Resumen de registro - Ciclismo:\n" +
+               "Nombre: " + nombre + "\n" +
+               "Edad: " + edad + "\n" +
+               "Tipo de ciclismo: " + tipoCiclismo + "\n" +
+               "Ciudad: " + ciudad + "\n" +
+               "Marca de bicicleta preferida: " + marcaBicicleta + "\n"
+
+    Escribir cadena
+  Fin función registrarParticipanteCiclismo
+
+  función registrarParticipanteTenis()
+    nombre, x(50), [{a-z}, {A-Z}, {Bs}]
+    edad, i[0-n]
+    nivel, x(20), [{a-z}, {A-Z}, {Bs}]
+    ciudad, x(30), [{a-z}, {A-Z}, {Bs}]
+    manoHabil, x(10), [{a-z},{A-Z}]
+    cadena,x(20),[{a-z},{A-Z},{0-9},{Bs},{\}]
+
+    Escribir "Ingrese el nombre del participante:"
+    Leer nombre
+    Escribir "Ingrese la edad del participante:"
+    Leer edad
+    Escribir "Ingrese el nivel (principiante, intermedio, avanzado):"
+    Leer nivel
+    Escribir "Ingrese la ciudad:"
+    Leer ciudad
+    Escribir "Ingrese la mano hábil (derecha/izquierda):"
+    Leer manoHabil
+
+    cadena <-- "Resumen de registro - Tenis:\n" +
+               "Nombre: " + nombre + "\n" +
+               "Edad: " + edad + "\n" +
+               "Nivel: " + nivel + "\n" +
+               "Ciudad: " + ciudad + "\n" +
+               "Mano hábil: " + manoHabil + "\n"
+
+    Escribir cadena
+  Fin función registrarParticipanteTenis
+
+  función registrarParticipanteYoga()
+    nombre, x(50), [{a-z}, {A-Z}, {Bs}]
+    edad, i[0-n]
+    nivel, x(20), [{a-z}, {A-Z}, {Bs}]
+    ciudad, x(30), [{a-z}, {A-Z}, {Bs}]
+    estiloYoga, x(30), [{a-z}, {A-Z}, {Bs}]
+    cadena,x(20),[{a-z},{A-Z},{0-9},{Bs},{\}]
+
+    Escribir "Ingrese el nombre del participante:"
+    Leer nombre
+    Escribir "Ingrese la edad del participante:"
+    Leer edad
+    Escribir "Ingrese el nivel (principiante, intermedio, avanzado):"
+    Leer nivel
+    Escribir "Ingrese la ciudad:"
+    Leer ciudad
+    Escribir "Ingrese el estilo de yoga preferido:"
+    Leer estiloYoga
+
+    cadena <-- "Resumen de registro - Yoga:\n" +
+               "Nombre: " + nombre + "\n" +
+               "Edad: " + edad + "\n" +
+               "Nivel: " + nivel + "\n" +
+               "Ciudad: " + ciudad + "\n" +
+               "Estilo de yoga preferido: " + estiloYoga + "\n"
+
+    Escribir cadena
+  Fin función registrarParticipanteYoga
+
+  función ObtenerInformacion(totalParticipantes)
+  cadena,x(20),[{a-z},{A-Z},{0-9},{Bs},{\}]
+    Si (totalParticipantes >= 1 Y totalParticipantes <= 5) Entonces
+      cadena<-- "Poca participación en el club, hay que mejorar."
+    Caso contrario
+      Si (totalParticipantes >= 6 Y totalParticipantes <= 15) Entonces
+        cadena<-- "Buena participación, sigan así."
+      Caso contrario
+          Si (totalParticipantes >= 16) Entonces
+            cadena<-- "Excelente campaña del club."
+          Caso contrario
+            cadena<-- "Mala campaña, debemos mejorar."
+          Fin si
+      Fin Si
+    Fin si
+    Retornar cadena
+  Fin función ObtenerInformacion
+
+  función obtenerReporte(actividades, participantesRegistrados)
+    eporte,x(20),[{a-z},{A-Z},{0-9},{Bs},{\}]
+    reporte <-- "Las actividades ingresadas son:\n"
+    Para (contador <-- 0, contador < 7, 1) Haga
+      reporte <-- reporte + (contador + 1) + ". Número de Participantes de "
+                + actividades[contador] + ": " + participantesRegistrados[contador] + "\n"
+    Fin Para
+    Retornar reporte
+  Fin función obtenerReporte
+
+Fin
