@@ -1,0 +1,12 @@
+Algoritmo
+
+1. Inicio
+2. Mediante un ciclo se presentan las actividades en las que puede registrarse.
+3. De acuerdo con lo que elija, se dirige al procedimiento correspondiente.
+4. Si escoge un número fuera de rango, se le muestra un mensaje indicando que no existe un club.
+5. Ir sumando los usuarios registrados dentro de un arreglo.
+6. Preguntar si desea volver a registrar un nuevo participante; si su decisión es no, salir del ciclo.
+7. Sumar todos los participantes registrados.
+8. Presentar un mensaje con base en el número de participantes registrados.
+9. Presentar el total de participantes registrados en cada actividad.
+10. Fin
